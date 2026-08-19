@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Opeyemi Ogunbona — Social Media Manager</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;1,500;1,600&family=Sora:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink: #10142B;
+    --ink-2: #171C3B;
+    --card: #1C2247;
+    --card-hi: #262C54;
+    --paper: #F6F1E4;
+    --paper-dim: #C9C4B6;
+    --yellow: #FFC53D;
+    --magenta: #E4487A;
+    --sage: #8FBF9F;
+    --line: rgba(246,241,228,0.14);
+    --display: 'Fraunces', serif;
+    --body: 'Sora', sans-serif;
+    --mono: 'IBM Plex Mono', monospace;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto;} *{animation-duration:0.01ms !important; transition-duration:0.01ms !important;} }
+  body{background:var(--ink); color:var(--paper); font-family:var(--body); line-height:1.6; overflow-x:hidden;}
+  a{color:inherit;}
+  img{max-width:100%; display:block;}
+  .wrap{max-width:1160px; margin:0 auto; padding:0 28px;}
+  .eyebrow{font-family:var(--mono); text-transform:uppercase; letter-spacing:0.14em; font-size:0.72rem; color:var(--yellow); display:flex; align-items:center; gap:10px;}
+  .eyebrow::before{content:""; width:22px; height:1px; background:var(--yellow);}
+  h1,h2,h3{font-family:var(--display); font-weight:600; letter-spacing:-0.01em;}
+
+  header.nav{position:fixed; top:0; left:0; right:0; z-index:50; background:rgba(16,20,43,0.86); backdrop-filter:blur(10px); border-bottom:1px solid var(--line);}
+  .nav-inner{max-width:1160px; margin:0 auto; padding:16px 28px; display:flex; align-items:center; justify-content:space-between;}
+  .nav-name{font-family:var(--display); font-size:1.05rem; font-weight:600;}
+  .nav-name em{color:var(--yellow); font-style:italic;}
+  .nav-links{display:flex; gap:24px; list-style:none; font-size:0.86rem;}
+  .nav-links a{text-decoration:none; color:var(--paper-dim); transition:color .2s;}
+  .nav-links a:hover, .nav-links a:focus-visible{color:var(--yellow);}
+  .nav-links a:focus-visible{outline:2px solid var(--yellow); outline-offset:4px;}
+
+  .hero{padding:170px 0 100px; display:grid; grid-template-columns:1.1fr 0.9fr; gap:50px; align-items:center;}
+  .hero h1{font-size:clamp(2.4rem, 5vw, 3.6rem); line-height:1.08; margin:22px 0 22px;}
+  .hero h1 .accent{font-style:italic; color:var(--yellow);}
+  .hero p.lede{font-size:1.08rem; color:var(--paper-dim); max-width:480px; margin-bottom:34px;}
+  .cta-row{display:flex; gap:14px; flex-wrap:wrap;}
+  .btn{font-family:var(--body); font-weight:600; font-size:0.92rem; padding:13px 26px; border-radius:100px; text-decoration:none; display:inline-flex; align-items:center; gap:8px; transition:transform .18s ease, box-shadow .18s ease;}
+  .btn-primary{background:var(--yellow); color:var(--ink);}
+  .btn-primary:hover{transform:translateY(-2px); box-shadow:0 10px 24px rgba(255,197,61,0.25);}
+  .btn-ghost{border:1px solid var(--line); color:var(--paper);}
+  .btn-ghost:hover{border-color:var(--yellow); color:var(--yellow);}
+  .btn:focus-visible{outline:2px solid var(--yellow); outline-offset:3px;}
+
+  .phone-stage{position:relative; height:440px; display:flex; align-items:center; justify-content:center;}
+  .phone{width:250px; background:var(--card); border:1px solid var(--line); border-radius:34px; padding:12px; box-shadow:0 40px 80px -30px rgba(0,0,0,0.6); transform:rotate(-4deg);}
+  .phone .screen{background:var(--ink-2); border-radius:24px; overflow:hidden;}
+  .phone .post-photo{aspect-ratio:1/1; background:linear-gradient(135deg, var(--magenta), var(--yellow) 130%); display:flex; align-items:flex-end; padding:14px;}
+  .phone .post-photo span{font-family:var(--mono); font-size:0.65rem; color:var(--ink); background:rgba(246,241,228,0.85); padding:4px 8px; border-radius:5px;}
+  .phone .post-body{padding:14px;}
+  .phone .post-icons{display:flex; gap:10px; font-size:0.9rem; color:var(--paper-dim); margin-bottom:8px;}
+  .phone .post-caption{font-size:0.72rem; color:var(--paper-dim); line-height:1.5;}
+  .phone .post-caption b{color:var(--paper); font-weight:600;}
+  .stamp-badge{position:absolute; bottom:6px; left:-8px; width:96px; height:96px; border:2px solid var(--sage); border-radius:50%; display:flex; align-items:center; justify-content:center; text-align:center; transform:rotate(-16deg); color:var(--sage); font-family:var(--mono); font-size:0.58rem; letter-spacing:0.08em; text-transform:uppercase; opacity:0.9; line-height:1.3;}
+
+  section{padding:90px 0;}
+  .section-head{max-width:640px; margin-bottom:52px;}
+  .section-head h2{font-size:clamp(1.8rem,3.4vw,2.5rem); margin-top:14px;}
+  .section-head p{color:var(--paper-dim); margin-top:14px; font-size:1.02rem;}
+
+  .about-grid{display:grid; grid-template-columns:0.85fr 1.15fr; gap:60px; align-items:start;}
+  .about-grid p{color:var(--paper-dim); margin-bottom:16px; font-size:1rem;}
+  .about-grid p b{color:var(--paper); font-weight:600;}
+  .skill-tags{display:flex; flex-wrap:wrap; gap:10px; margin-top:22px;}
+  .skill-tags span{font-family:var(--mono); font-size:0.7rem; letter-spacing:0.03em; padding:8px 14px; border:1px solid var(--yellow); color:var(--yellow); border-radius:100px; text-transform:uppercase;}
+
+  .dossier{border-top:1px solid var(--line);}
+  .dossier-item{display:grid; grid-template-columns:150px 1fr; gap:24px; padding:24px 0; border-bottom:1px solid var(--line);}
+  .dossier-item .tag{font-family:var(--mono); font-size:0.64rem; letter-spacing:0.05em; text-transform:uppercase; color:var(--ink); background:var(--magenta); padding:5px 10px; align-self:start; text-align:center; border-radius:4px;}
+  .dossier-item h3{font-size:1.06rem; font-weight:600; margin-bottom:6px; font-family:var(--body); color:var(--paper);}
+  .dossier-item p{color:var(--paper-dim); font-size:0.92rem; max-width:600px;}
+  .dossier-item a{color:var(--sage); font-weight:600; text-decoration:underline;}
+
+  .service-grid{display:grid; grid-template-columns:repeat(3, 1fr); gap:1px; background:var(--line); border:1px solid var(--line); border-radius:16px; overflow:hidden;}
+  .service-card{background:var(--ink); padding:30px 26px;}
+  .service-card h3{font-size:1.1rem; font-weight:600; margin-bottom:10px; font-family:var(--body);}
+  .service-card p{color:var(--paper-dim); font-size:0.92rem;}
+  .service-card .num{font-family:var(--mono); font-size:0.75rem; color:var(--magenta); display:block; margin-bottom:14px;}
+
+  .tabs{display:flex; flex-wrap:wrap; gap:12px; margin-bottom:40px;}
+  .tab{font-family:var(--mono); font-size:0.76rem; letter-spacing:0.03em; padding:10px 18px; border-radius:100px; border:1px solid var(--line); background:transparent; color:var(--paper-dim); cursor:pointer; transition:all .2s;}
+  .tab:hover{color:var(--paper);}
+  .tab.active{background:var(--yellow); color:var(--ink); border-color:var(--yellow); font-weight:600;}
+  .tab:focus-visible{outline:2px solid var(--yellow); outline-offset:3px;}
+
+  .niche-panel{display:none;}
+  .niche-panel.active{display:block; animation:fadeIn .35s ease;}
+  @keyframes fadeIn{from{opacity:0; transform:translateY(6px);} to{opacity:1; transform:translateY(0);}}
+  .niche-note{color:var(--paper-dim); font-size:0.9rem; margin-bottom:26px; max-width:640px;}
+  .post-grid{display:grid; grid-template-columns:repeat(2, 1fr); gap:24px;}
+
+  .post-card{background:var(--card); border:1px solid var(--line); border-radius:18px; overflow:hidden; display:flex; flex-direction:column;}
+  .post-card .thumb{aspect-ratio:16/10; display:flex; align-items:flex-start; justify-content:space-between; padding:16px;}
+  .thumb.mh{background:linear-gradient(135deg,#4C6E68,#8FBF9F);}
+  .thumb.bc{background:linear-gradient(135deg,#2C3F8E,#5C7CE6);}
+  .thumb.biz{background:linear-gradient(135deg,#8A5A2E,#FFC53D);}
+  .thumb.re{background:linear-gradient(135deg,#2D2A5E,#7C6FE0);}
+  .thumb.sp{background:linear-gradient(135deg,#7A1F3D,#E4487A);}
+  .thumb.seo{background:linear-gradient(135deg,#8A5A2E,#FFC53D);}
+  .thumb.ev{background:linear-gradient(135deg,#7A1F3D,#8FBF9F);}
+  .thumb .tag{font-family:var(--mono); font-size:0.65rem; background:rgba(16,20,43,0.55); color:var(--paper); padding:4px 9px; border-radius:6px;}
+  .thumb .format{font-family:var(--mono); font-size:0.65rem; color:rgba(16,20,43,0.7); font-weight:600;}
+  .post-content{padding:20px 20px 22px; flex:1; display:flex; flex-direction:column;}
+  .post-content h4{font-family:var(--body); font-size:0.98rem; font-weight:600; margin-bottom:10px;}
+  .post-content p{color:var(--paper-dim); font-size:0.88rem; margin-bottom:14px; flex:1;}
+  .post-hash{font-family:var(--mono); font-size:0.72rem; color:var(--sage);}
+  .post-content a.live{font-family:var(--mono); font-size:0.72rem; color:var(--yellow); text-decoration:underline; margin-top:4px; display:inline-block;}
+
+  .approach-list{border-top:1px solid var(--line);}
+  .approach-item{display:grid; grid-template-columns:70px 1fr; gap:24px; padding:26px 0; border-bottom:1px solid var(--line);}
+  .approach-item .step{font-family:var(--mono); color:var(--magenta); font-size:0.95rem;}
+  .approach-item h3{font-size:1.08rem; font-weight:600; margin-bottom:6px; font-family:var(--body);}
+  .approach-item p{color:var(--paper-dim); font-size:0.92rem; max-width:560px;}
+
+  .contact-card{background:var(--card); border:1px solid var(--line); border-radius:22px; padding:56px; display:grid; grid-template-columns:1.1fr 0.9fr; gap:40px; align-items:center;}
+  .contact-card h2{font-size:clamp(1.7rem,3vw,2.3rem); margin-bottom:14px;}
+  .contact-card p{color:var(--paper-dim); max-width:420px;}
+  .contact-list{list-style:none;}
+  .contact-list li{padding:14px 0; border-bottom:1px solid var(--line); display:flex; justify-content:space-between; font-size:0.92rem; gap:14px;}
+  .contact-list li span:first-child{color:var(--paper-dim); font-family:var(--mono); font-size:0.72rem; text-transform:uppercase;}
+  .contact-list li span:last-child{color:var(--yellow); text-align:right;}
+  .contact-list li a{color:var(--yellow); text-decoration:none;}
+  .contact-list li a:hover{text-decoration:underline;}
+
+  footer{padding:34px 0 50px; text-align:center; color:var(--paper-dim); font-size:0.82rem; font-family:var(--mono);}
+
+  @media (max-width: 880px){
+    .nav-links{display:none;}
+    .hero{grid-template-columns:1fr; padding-top:140px;}
+    .phone-stage{height:340px;}
+    .about-grid, .contact-card{grid-template-columns:1fr;}
+    .service-grid{grid-template-columns:1fr;}
+    .post-grid{grid-template-columns:1fr;}
+    .approach-item, .dossier-item{grid-template-columns:1fr; gap:6px;}
+    .dossier-item .tag{width:max-content;}
+    .contact-list li{flex-direction:column; align-items:flex-start;}
+    .contact-list li span:last-child{text-align:left;}
+  }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <div class="nav-name">Opeyemi <em>Ogunbona</em></div>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</header>
+
+<section class="hero">
+  <div>
+    <span class="eyebrow">Social Media Manager · Content Strategist</span>
+    <h1>Every post starts as <span class="accent">research</span>, not a guess.</h1>
+    <p class="lede">I plan and write social and web content for brands and causes that need to be understood fast, on platforms where attention is the scarcest resource. Strategy first, copy second, filler never.</p>
+    <div class="cta-row">
+      <a href="#work" class="btn btn-primary">See sample work</a>
+      <a href="#contact" class="btn btn-ghost">Work with me</a>
+    </div>
+  </div>
+  <div class="phone-stage">
+    <div class="phone">
+      <div class="screen">
+        <div class="post-photo"><span>Live sample</span></div>
+        <div class="post-body">
+          <div class="post-icons">♡ ⤳ ⌸</div>
+          <div class="post-caption"><b>SEO landing page —</b> "Get an insurance quote in Georgia, built around a primary keyword and structured for search, live on gastateautoinsurance.com."</div>
+        </div>
+      </div>
+    </div>
+    <div class="stamp-badge">On<br>File</div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap about-grid">
+    <div>
+      <span class="eyebrow">About</span>
+      <h2>Trained to read a room before writing to it.</h2>
+    </div>
+    <div>
+      <p>I'm a <b>First Class Honours</b> Sociology graduate from the University of Ibadan. That training shows up directly in how I approach content: understand the audience first, then write, rather than starting from a template.</p>
+      <p>I've written <b>advocacy content</b> for mental health and boy child causes, <b>SEO web copy</b> for a live commercial site, and a <b>fiction column</b> for a magazine, and I've worked inside content strategy teams for event promotions, stage and film productions, and capacity development events that reached thousands of people across Ibadan.</p>
+      <p>I also led digital content as President of my university's Media and Information Literacy Club, reaching over 2,500 secondary school students with content on responsible, critical social media use.</p>
+      <div class="skill-tags">
+        <span>Content strategy</span>
+        <span>Copywriting</span>
+        <span>SEO web copy</span>
+        <span>Campaign content</span>
+        <span>Audience research</span>
+        <span>Community voice</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="experience" style="background:var(--ink-2);">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Experience</span>
+      <h2>What's actually on file.</h2>
+      <p>Real engagements, not concepts. Where I worked as part of a team, that's stated plainly.</p>
+    </div>
+    <div class="dossier">
+      <div class="dossier-item">
+        <span class="tag">Team · Content</span>
+        <div>
+          <h3>Event & campaign content strategy</h3>
+          <p>Worked within a content strategy team on event promotions, stage and movie productions, and capacity development events reaching thousands of audiences across Ibadan, including <b style="color:var(--paper)">Matters that Matter</b>, run by Asido Campus Network, University of Ibadan.</p>
+        </div>
+      </div>
+      <div class="dossier-item">
+        <span class="tag">Solo · SEO</span>
+        <div>
+          <h3>SEO web copywriting</h3>
+          <p>Wrote a live content page for a Georgia-based insurance company, covering car, motorcycle, home, and business coverage, structured around a primary keyword and five secondary keywords with meta title and description.</p>
+          <a class="live" href="https://gastateautoinsurance.com/quote-online/" target="_blank" rel="noopener">View live page →</a>
+        </div>
+      </div>
+      <div class="dossier-item">
+        <span class="tag">Solo · Column</span>
+        <div>
+          <h3>Fiction column writer, The City Magazine</h3>
+          <p>Wrote a recurring fiction column, building narrative voice, pacing, and hook-writing skills that carry directly into captions and campaign copy.</p>
+        </div>
+      </div>
+      <div class="dossier-item">
+        <span class="tag">Leadership</span>
+        <div>
+          <h3>President, Media & Information Literacy Club</h3>
+          <p>Led digital and media literacy content for the University of Ibadan chapter, reaching over 2,500 secondary school students.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Services</span>
+      <h2>What I take off your plate.</h2>
+      <p>Pick one piece or hand over the whole content operation. Either way, it starts with understanding who you're actually talking to.</p>
+    </div>
+    <div class="service-grid">
+      <div class="service-card"><span class="num">01</span><h3>Content strategy</h3><p>Audience research, content pillars, and a posting plan built around what your specific followers respond to.</p></div>
+      <div class="service-card"><span class="num">02</span><h3>Caption & copywriting</h3><p>Captions, carousels, and campaign copy written to sound like a person, not a press release.</p></div>
+      <div class="service-card"><span class="num">03</span><h3>SEO web copy</h3><p>Keyword-structured landing and content pages that read naturally and are built to rank.</p></div>
+      <div class="service-card"><span class="num">04</span><h3>Content calendars</h3><p>Monthly calendars that account for real life, algorithm shifts, and dates that matter to your audience.</p></div>
+      <div class="service-card"><span class="num">05</span><h3>Community management</h3><p>Replies, DMs, and comment moderation handled in your brand's voice, consistently.</p></div>
+      <div class="service-card"><span class="num">06</span><h3>Event & campaign content</h3><p>Promotional content that builds real turnout, not just impressions, for launches and live events.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="work" style="background:var(--ink-2);">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Work</span>
+      <h2>Sample content, by niche.</h2>
+      <p>Two case files below are real, published work. The rest are concept pieces written for this portfolio, across the areas I want to work in.</p>
+    </div>
+
+    <div class="tabs" role="tablist" aria-label="Content niches">
+      <button class="tab active" data-tab="seo">SEO Web Copy</button>
+      <button class="tab" data-tab="ev">Event & Campaign</button>
+      <button class="tab" data-tab="mh">Mental Health</button>
+      <button class="tab" data-tab="bc">Boy Child Advocacy</button>
+      <button class="tab" data-tab="biz">Business / SME</button>
+      <button class="tab" data-tab="re">Real Estate</button>
+      <button class="tab" data-tab="sp">Sports</button>
+    </div>
+
+    <div class="niche-panel active" id="panel-seo">
+      <p class="niche-note">Real, published sample. A content page for a Georgia insurance company, built around a target keyword set.</p>
+      <div class="post-grid">
+        <div class="post-card">
+          <div class="thumb seo"><span class="tag">Live page</span><span class="format">Web / SEO</span></div>
+          <div class="post-content">
+            <h4>"Get an insurance quote" — landing page</h4>
+            <p>Primary keyword: get an insurance quote Georgia. Covers car, motorcycle, home, and business insurance in one page, with a meta title and description written to match search intent and drive click-through.</p>
+            <span class="post-hash">KEYWORDS: car insurance quote GA · motorcycle liability · homeowners insurance GA</span>
+            <a class="live" href="https://gastateautoinsurance.com/quote-online/" target="_blank" rel="noopener">View live page →</a>
+          </div>
+        </div>
+        <div class="post-card">
+          <div class="thumb seo"><span class="tag">Excerpt</span><span class="format">Copy sample</span></div>
+          <div class="post-content">
+            <h4>Opening paragraph</h4>
+            <p>"Looking to get an insurance quote in Georgia for your property? Choosing the right coverage means knowing exactly what's protected and what isn't. From autos to homes to business assets, here's where to start."</p>
+            <span class="post-hash">FORMAT: On-page web copy · TONE: Direct, reassuring</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="niche-panel" id="panel-ev">
+      <p class="niche-note">Real experience, working within a content strategy team on live events in Ibadan.</p>
+      <div class="post-grid">
+        <div class="post-card">
+          <div class="thumb ev"><span class="tag">Case file</span><span class="format">Capacity Dev.</span></div>
+          <div class="post-content">
+            <h4>Matters that Matter — Asido Campus Network, UI</h4>
+            <p>Part of the content strategy team supporting promotion for a capacity development event, helping build pre-event momentum and turnout across university audiences.</p>
+            <span class="post-hash">ROLE: Content strategy team · SCOPE: Capacity development event</span>
+          </div>
+        </div>
+        <div class="post-card">
+          <div class="thumb ev"><span class="tag">Case file</span><span class="format">Production</span></div>
+          <div class="post-content">
+            <h4>Stage & movie production promotion</h4>
+            <p>Content strategy support for promotional campaigns behind stage and film productions in Ibadan, contributing to audience-facing content ahead of showtimes.</p>
+            <span class="post-hash">ROLE: Content strategy team · SCOPE: Event promotion</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="niche-panel" id="panel-mh">
+      <p class="niche-note">Concept brief: an Instagram page for a mental health awareness initiative talking to young Nigerians who see therapy as a last resort.</p>
+      <div class="post-grid">
+        <div class="post-card">
+          <div class="thumb mh"><span class="tag">Carousel · Slide 1</span><span class="format">IG</span></div>
+          <div class="post-content">
+            <h4>"You don't have to be falling apart to see a therapist"</h4>
+            <p>Opens a carousel breaking the idea that therapy is only for crisis moments, with later slides walking through what an ordinary first session looks like.</p>
+            <span class="post-hash">#MentalHealthNigeria #TherapyIsNormal</span>
+          </div>
+        </div>
+        <div class="post-card">
+          <div class="thumb mh"><span class="tag">Single post</span><span class="format">IG / X</span></div>
+          <div class="post-content">
+            <h4>Sunday check-in prompt</h4>
+            <p>"Before the week starts again: what's one thing you're carrying that you haven't said out loud yet? You don't have to answer here. Just notice it." A low-pressure comment prompt.</p>
+            <span class="post-hash">#CheckIn #MentalHealthAwareness</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="niche-panel" id="panel-bc">
+      <p class="niche-note">Concept brief: a boy child advocacy page addressing emotional suppression and fatherhood.</p>
+      <div class="post-grid">
+        <div class="post-card">
+          <div class="thumb bc"><span class="tag">Single post</span><span class="format">IG</span></div>
+          <div class="post-content">
+            <h4>"Man up" reframed</h4>
+            <p>"We tell boys to man up before we teach them what to do with what they're feeling. That's not strength, that's a boy learning to go quiet." Written to be screenshot and shared.</p>
+            <span class="post-hash">#BoyChildAdvocacy #RaisingBoys</span>
+          </div>
+        </div>
+        <div class="post-card">
+          <div class="thumb bc"><span class="tag">Carousel · Slide 1</span><span class="format">IG</span></div>
+          <div class="post-content">
+            <h4>Five words boys rarely hear</h4>
+            <p>A carousel listing phrases like "it's okay to cry" and "tell me what happened," unpacking why each matters and how to actually say it at home.</p>
+            <span class="post-hash">#EmotionalLiteracy #BoyChild</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="niche-panel" id="panel-biz">
+      <p class="niche-note">Concept brief: a small Nigerian fashion and food business posting content that needs to convert.</p>
+      <div class="post-grid">
+        <div class="post-card">
+          <div class="thumb biz"><span class="tag">Product drop</span><span class="format">IG</span></div>
+          <div class="post-content">
+            <h4>New collection launch</h4>
+            <p>"Restock is in, and this one moved faster last time than we could keep up with. Sizes 8 to 20. Link in bio, DM if your size isn't showing."</p>
+            <span class="post-hash">#NewArrivals #ShopNigerian</span>
+          </div>
+        </div>
+        <div class="post-card">
+          <div class="thumb biz"><span class="tag">Weekend promo</span><span class="format">IG / WhatsApp</span></div>
+          <div class="post-content">
+            <h4>Small chops weekend special</h4>
+            <p>"Saturday plans sorted. Order before 2pm for same-day delivery within Ibadan, or come through and watch us pack it fresh."</p>
+            <span class="post-hash">#WeekendSpecial #IbadanFoodie</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="niche-panel" id="panel-re">
+      <p class="niche-note">Concept brief: a real estate agency selling land and property to cautious first-time buyers.</p>
+      <div class="post-grid">
+        <div class="post-card">
+          <div class="thumb re"><span class="tag">Education</span><span class="format">IG / X</span></div>
+          <div class="post-content">
+            <h4>"Ask for this before you pay anything"</h4>
+            <p>Walks first-time land buyers through the documents to request before sending money, positioning the agency as the safe, transparent option.</p>
+            <span class="post-hash">#LandInvestment #RealEstateNigeria</span>
+          </div>
+        </div>
+        <div class="post-card">
+          <div class="thumb re"><span class="tag">Listing</span><span class="format">IG</span></div>
+          <div class="post-content">
+            <h4>Off-plan listing caption</h4>
+            <p>"3 bedrooms, still off-plan, still at the price that won't exist once the foundation is done. This is the stage where early buyers actually save money."</p>
+            <span class="post-hash">#OffPlan #PropertyListing</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="niche-panel" id="panel-sp">
+      <p class="niche-note">Concept brief: a local football fan page building matchday engagement.</p>
+      <div class="post-grid">
+        <div class="post-card">
+          <div class="thumb sp"><span class="tag">Matchday</span><span class="format">X / IG</span></div>
+          <div class="post-content">
+            <h4>Matchday hype post</h4>
+            <p>"Three points or nothing today. Drop your score prediction before kickoff, we're pinning the closest one."</p>
+            <span class="post-hash">#MatchdayNaija #PredictAndWin</span>
+          </div>
+        </div>
+        <div class="post-card">
+          <div class="thumb sp"><span class="tag">Spotlight</span><span class="format">IG</span></div>
+          <div class="post-content">
+            <h4>Player of the week</h4>
+            <p>"Two goals, one assist, zero complaints when the ball wasn't coming his way. This week's spotlight was earned, not given."</p>
+            <span class="post-hash">#PlayerOfTheWeek</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="approach">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Approach</span>
+      <h2>How a project actually runs.</h2>
+    </div>
+    <div class="approach-list">
+      <div class="approach-item"><span class="step">01</span><div><h3>Understand the audience</h3><p>Before any content plan, I look at who you're actually reaching now and who you should be reaching, using research methods rather than guesswork.</p></div></div>
+      <div class="approach-item"><span class="step">02</span><div><h3>Set content pillars</h3><p>Three to five recurring themes that give your page a personality people recognize, instead of a feed that reads different every week.</p></div></div>
+      <div class="approach-item"><span class="step">03</span><div><h3>Write and plan</h3><p>Captions, calendars, and formats mapped out in advance, so posting stays consistent even in busy weeks.</p></div></div>
+      <div class="approach-item"><span class="step">04</span><div><h3>Review and adjust</h3><p>Regular check-ins on what's landing and what isn't, with the plan updated rather than left on autopilot.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="contact-card">
+      <div>
+        <span class="eyebrow">Contact</span>
+        <h2>Have a page that needs a voice?</h2>
+        <p>Send a message with a bit about your brand or cause and what you need help with. I'll follow up within a couple of days.</p>
+      </div>
+      <ul class="contact-list">
+        <li><span>Email</span><a href="mailto:opeyemiogunbona06@gmail.com">opeyemiogunbona06@gmail.com</a></li>
+        <li><span>Phone / WhatsApp</span><span>+234 708 605 4308</span></li>
+        <li><span>Instagram</span><a href="https://instagram.com/damilola__ogunbona" target="_blank" rel="noopener">@damilola__ogunbona</a></li>
+        <li><span>LinkedIn</span><span>Opeyemi Ogunbona</span></li>
+        <li><span>Location</span><span>Ibadan, Nigeria</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<footer>Opeyemi Ogunbona — Social Media Manager &amp; Content Strategist</footer>
+
+<script>
+  const tabs = document.querySelectorAll('.tab');
+  const panels = document.querySelectorAll('.niche-panel');
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      tabs.forEach(t => t.classList.remove('active'));
+      panels.forEach(p => p.classList.remove('active'));
+      tab.classList.add('active');
+      document.getElementById('panel-' + tab.dataset.tab).classList.add('active');
+    });
+  });
+</script>
+
+</body>
+</html>
