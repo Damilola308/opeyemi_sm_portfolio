@@ -111,6 +111,8 @@
   .thumb.sp{background:linear-gradient(135deg,#7A1F3D,#E4487A);}
   .thumb.seo{background:linear-gradient(135deg,#8A5A2E,#FFC53D);}
   .thumb.ev{background:linear-gradient(135deg,#7A1F3D,#8FBF9F);}
+  .thumb.pm{background:linear-gradient(135deg,#1F3D6B,#8FBF9F);}
+  .thumb.ch{background:linear-gradient(135deg,#1B1E3B,#5C7CE6);}
   .thumb .tag{font-family:var(--mono); font-size:0.65rem; background:rgba(16,20,43,0.55); color:var(--paper); padding:4px 9px; border-radius:6px;}
   .thumb .format{font-family:var(--mono); font-size:0.65rem; color:rgba(16,20,43,0.7); font-weight:600;}
   .post-content{padding:20px 20px 22px; flex:1; display:flex; flex-direction:column;}
@@ -118,6 +120,36 @@
   .post-content p{color:var(--paper-dim); font-size:0.88rem; margin-bottom:14px; flex:1;}
   .post-hash{font-family:var(--mono); font-size:0.72rem; color:var(--sage);}
   .post-content a.live{font-family:var(--mono); font-size:0.72rem; color:var(--yellow); text-decoration:underline; margin-top:4px; display:inline-block;}
+
+  /* DESIGN SAMPLES */
+  .design-grid{display:grid; grid-template-columns:repeat(3, 1fr); gap:24px;}
+  .design-card{background:var(--card); border:1px solid var(--line); border-radius:18px; overflow:hidden;}
+  .design-graphic{aspect-ratio:4/5; position:relative; display:flex; flex-direction:column; justify-content:space-between; padding:22px;}
+  .design-graphic .dg-tag{font-family:var(--mono); font-size:0.6rem; letter-spacing:0.08em; text-transform:uppercase; color:rgba(255,255,255,0.85); background:rgba(0,0,0,0.2); align-self:flex-start; padding:4px 9px; border-radius:5px;}
+  .design-graphic .dg-quote{font-family:var(--display); font-style:italic; font-weight:600; font-size:1.35rem; line-height:1.25; color:#fff;}
+  .design-graphic .dg-headline{font-family:var(--display); font-weight:600; font-size:1.7rem; line-height:1.1; color:#fff;}
+  .design-graphic .dg-sub{font-family:var(--body); font-size:0.78rem; color:rgba(255,255,255,0.85); margin-top:8px;}
+  .design-graphic .dg-foot{display:flex; justify-content:space-between; align-items:center;}
+  .design-graphic .dg-brand{font-family:var(--mono); font-size:0.62rem; letter-spacing:0.06em; color:rgba(255,255,255,0.75); text-transform:uppercase;}
+  .design-graphic .dg-cta{font-family:var(--mono); font-size:0.62rem; letter-spacing:0.04em; background:#fff; color:#10142B; padding:6px 12px; border-radius:100px; font-weight:700;}
+  .design-graphic .dg-price{font-family:var(--mono); font-size:0.9rem; font-weight:700; background:var(--yellow); color:#10142B; padding:5px 11px; border-radius:6px; align-self:flex-start;}
+  .design-graphic.dg-1{background:linear-gradient(150deg,#0B5E3B,#8FBF9F);}
+  .design-graphic.dg-2{background:linear-gradient(150deg,#1F2A5C,#2D2A5E 60%,#7C6FE0);}
+  .design-graphic.dg-3{background:linear-gradient(150deg,#7A1F3D,#E4487A 60%,#FFC53D);}
+  .design-note{padding:16px 20px 20px; font-size:0.82rem; color:var(--paper-dim);}
+  .design-note b{color:var(--paper);}
+
+  /* CONTENT CALENDAR */
+  .cal-table{width:100%; border-collapse:collapse; font-size:0.84rem;}
+  .cal-table th{font-family:var(--mono); text-transform:uppercase; letter-spacing:0.05em; font-size:0.68rem; color:var(--yellow); text-align:left; padding:10px 14px; border-bottom:2px solid var(--line);}
+  .cal-table td{padding:12px 14px; border-bottom:1px solid var(--line); color:var(--paper-dim); vertical-align:top;}
+  .cal-table td.day{color:var(--paper); font-weight:600; white-space:nowrap;}
+  .cal-table td .pillar{display:inline-block; font-family:var(--mono); font-size:0.62rem; text-transform:uppercase; letter-spacing:0.03em; padding:3px 8px; border-radius:4px; color:#10142B; font-weight:700;}
+  .pillar.edu{background:var(--sage);}
+  .pillar.list{background:var(--yellow);}
+  .pillar.eng{background:var(--magenta); color:#fff;}
+  .pillar.brand{background:#7C6FE0; color:#fff;}
+  .cal-wrap{background:var(--card); border:1px solid var(--line); border-radius:18px; padding:8px 8px 4px; overflow-x:auto;}
 
   .approach-list{border-top:1px solid var(--line);}
   .approach-item{display:grid; grid-template-columns:70px 1fr; gap:24px; padding:26px 0; border-bottom:1px solid var(--line);}
@@ -148,6 +180,9 @@
     .dossier-item .tag{width:max-content;}
     .contact-list li{flex-direction:column; align-items:flex-start;}
     .contact-list li span:last-child{text-align:left;}
+    .design-grid{grid-template-columns:1fr;}
+    .cal-table{font-size:0.76rem;}
+    .cal-table th, .cal-table td{padding:8px 10px;}
   }
 </style>
 </head>
@@ -173,7 +208,7 @@
     <p class="lede">I plan and write social and web content for brands and causes that need to be understood fast, on platforms where attention is the scarcest resource. Strategy first, copy second, filler never.</p>
     <div class="cta-row">
       <a href="#work" class="btn btn-primary">See sample work</a>
-      <a href="#contact" class="btn btn-ghost">Work with me</a>
+      <a href="https://wa.me/2347086054308" target="_blank" rel="noopener" class="btn btn-ghost">Work with me</a>
     </div>
   </div>
   <div class="phone-stage">
@@ -276,11 +311,14 @@
     <div class="section-head">
       <span class="eyebrow">Work</span>
       <h2>Sample content, by niche.</h2>
-      <p>Two case files below are real, published work. The rest are concept pieces written for this portfolio, across the areas I want to work in.</p>
+      <p>Two case files below are real, published work. The rest, including the Property Marketing set, are concept pieces written for this portfolio, across the areas I want to work in.</p>
     </div>
 
     <div class="tabs" role="tablist" aria-label="Content niches">
-      <button class="tab active" data-tab="seo">SEO Web Copy</button>
+      <button class="tab active" data-tab="pm">Property Marketing</button>
+      <button class="tab" data-tab="cal">Content Calendar</button>
+      <button class="tab" data-tab="design">Design Samples</button>
+      <button class="tab" data-tab="seo">SEO Web Copy</button>
       <button class="tab" data-tab="ev">Event & Campaign</button>
       <button class="tab" data-tab="mh">Mental Health</button>
       <button class="tab" data-tab="bc">Boy Child Advocacy</button>
@@ -289,7 +327,109 @@
       <button class="tab" data-tab="sp">Sports</button>
     </div>
 
-    <div class="niche-panel active" id="panel-seo">
+    <div class="niche-panel active" id="panel-pm">
+      <p class="niche-note">Concept brief: a property company selling residential and investment plots, built to guide buyers from first scroll to a booked site inspection.</p>
+      <div class="post-grid">
+        <div class="post-card">
+          <div class="thumb pm"><span class="tag">Carousel · Slide 1</span><span class="format">IG</span></div>
+          <div class="post-content">
+            <h4>"5 things to confirm before you pay for that plot"</h4>
+            <p>Opens a carousel walking buyers through survey plans, C of O status, government excision, site inspection, and payment structure. Positions the brand as the safe, transparent choice in a market full of scam warnings.</p>
+            <span class="post-hash">#LandInvestment #RealEstateNigeria #BuyLandSmart</span>
+          </div>
+        </div>
+        <div class="post-card">
+          <div class="thumb pm"><span class="tag">Listing</span><span class="format">IG / FB</span></div>
+          <div class="post-content">
+            <h4>"Two kinds of dream homes, one company"</h4>
+            <p>"Some people want mornings by the water. Others want to be five minutes from everywhere. We have plots for both, from quiet residential estates to prime plots in the heart of the city. Tell us which one sounds like you."</p>
+            <span class="post-hash">#PlotsForSale #DreamHome</span>
+          </div>
+        </div>
+        <div class="post-card">
+          <div class="thumb pm"><span class="tag">Newsletter</span><span class="format">Email</span></div>
+          <div class="post-content">
+            <h4>"New plots just opened, here's first access"</h4>
+            <p>"Before this goes out to everyone else, our list gets first look. New plots just opened, starting at a launch price. Reply to this email or click below to book a site inspection this week." Built around urgency and exclusivity for an existing list.</p>
+            <span class="post-hash">SUBJECT LINE + FIRST-LOOK OFFER</span>
+          </div>
+        </div>
+        <div class="post-card">
+          <div class="thumb pm"><span class="tag">Lead ad</span><span class="format">Meta Ads</span></div>
+          <div class="post-content">
+            <h4>"Own land without the guesswork"</h4>
+            <p>"Verified titles. Transparent pricing. A team that walks you through every step, from first inspection to final documentation." CTA: Book Inspection. Written short and benefit-first for a cold audience scrolling fast.</p>
+            <span class="post-hash">CTA: BOOK INSPECTION</span>
+          </div>
+        </div>
+        <div class="post-card">
+          <div class="thumb pm"><span class="tag">Poll</span><span class="format">IG Story</span></div>
+          <div class="post-content">
+            <h4>"Build now, or hold as an investment?"</h4>
+            <p>A two-option poll sticker: "Build now 🏗️" vs "Hold & invest 📈". Low-effort content designed purely to drive interaction and give the page usable data on audience intent for retargeting later.</p>
+            <span class="post-hash">ENGAGEMENT + AUDIENCE INSIGHT</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="niche-panel" id="panel-cal">
+      <p class="niche-note">Content strategy sample: a one-week content calendar snapshot for a property brand, showing how education, listings, and engagement posts rotate across a week rather than posting at random.</p>
+      <div class="cal-wrap">
+        <table class="cal-table">
+          <thead>
+            <tr><th>Day</th><th>Pillar</th><th>Format</th><th>Content idea</th></tr>
+          </thead>
+          <tbody>
+            <tr><td class="day">Monday</td><td><span class="pillar edu">Education</span></td><td>Carousel</td><td>Documents to confirm before paying for a plot</td></tr>
+            <tr><td class="day">Tuesday</td><td><span class="pillar list">Listing</span></td><td>Feed post</td><td>Featured plot of the week, price and location</td></tr>
+            <tr><td class="day">Wednesday</td><td><span class="pillar brand">Brand</span></td><td>Reel</td><td>Behind the scenes: a site inspection walkthrough</td></tr>
+            <tr><td class="day">Thursday</td><td><span class="pillar eng">Engagement</span></td><td>Story poll</td><td>"Build now or hold as investment?"</td></tr>
+            <tr><td class="day">Friday</td><td><span class="pillar list">Listing</span></td><td>Feed post</td><td>Weekend site-tour booking reminder</td></tr>
+            <tr><td class="day">Saturday</td><td><span class="pillar edu">Education</span></td><td>Single post</td><td>Client FAQ answered in plain language</td></tr>
+            <tr><td class="day">Sunday</td><td><span class="pillar brand">Brand</span></td><td>Story</td><td>Quiet, aspirational shot, low-copy "imagine home" post</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="niche-panel" id="panel-design">
+      <p class="niche-note">Basic design samples: simple, brand-consistent graphics built around typography and color blocking rather than heavy illustration, the kind of design a lean marketing team actually needs day to day.</p>
+      <div class="design-grid">
+        <div class="design-card">
+          <div class="design-graphic dg-1">
+            <span class="dg-tag">Mental Health Awareness</span>
+            <div class="dg-quote">"You don't have to be falling apart to see a therapist."</div>
+            <div class="dg-foot"><span class="dg-brand">@yourbrand</span><span class="dg-cta">Save this</span></div>
+          </div>
+          <div class="design-note">Quote graphic for an advocacy page. Built for shareability, one idea, high contrast, easy to read at thumbnail size.</div>
+        </div>
+        <div class="design-card">
+          <div class="design-graphic dg-2">
+            <span class="dg-tag">New Listing</span>
+            <div>
+              <div class="dg-headline">3 Bedroom Duplex</div>
+              <div class="dg-sub">Prime location · Verified title · Move-in ready</div>
+            </div>
+            <div class="dg-foot"><span class="dg-price">₦45M</span><span class="dg-cta">Book Tour →</span></div>
+          </div>
+          <div class="design-note">Property listing flyer. Clear price tag, one CTA, headline sized to read in a fast scroll.</div>
+        </div>
+        <div class="design-card">
+          <div class="design-graphic dg-3">
+            <span class="dg-tag">You're Invited</span>
+            <div>
+              <div class="dg-headline">Matters That Matter</div>
+              <div class="dg-sub">A conversation on what actually moves the needle. Asido Campus Network × University of Ibadan.</div>
+            </div>
+            <div class="dg-foot"><span class="dg-brand">Seats limited</span><span class="dg-cta">Register</span></div>
+          </div>
+          <div class="design-note">Event poster for a real capacity development event I worked on, <b>Matters that Matter</b>, built to work both as a feed post and a printable flyer.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="niche-panel" id="panel-seo">
       <p class="niche-note">Real, published sample. A content page for a Georgia insurance company, built around a target keyword set.</p>
       <div class="post-grid">
         <div class="post-card">
@@ -329,6 +469,14 @@
             <h4>Stage & movie production promotion</h4>
             <p>Content strategy support for promotional campaigns behind stage and film productions in Ibadan, contributing to audience-facing content ahead of showtimes.</p>
             <span class="post-hash">ROLE: Content strategy team · SCOPE: Event promotion</span>
+          </div>
+        </div>
+        <div class="post-card">
+          <div class="thumb ev"><span class="tag">Sample copy</span><span class="format">IG feed</span></div>
+          <div class="post-content">
+            <h4>Matters that Matter — promo caption</h4>
+            <p>"Some things get talked about everywhere and solved nowhere. Matters That Matter is bringing those conversations into one room, real talk, no fluff. Registration link in bio, seats are limited." Written to drive registrations, not just impressions.</p>
+            <span class="post-hash">#MattersThatMatter #AsidoCampusNetwork</span>
           </div>
         </div>
       </div>
@@ -423,7 +571,7 @@
     </div>
 
     <div class="niche-panel" id="panel-sp">
-      <p class="niche-note">Concept brief: a local football fan page building matchday engagement.</p>
+      <p class="niche-note">Concept briefs across two sports communities: a local football fan page, and a chess club building a beginner-friendly audience.</p>
       <div class="post-grid">
         <div class="post-card">
           <div class="thumb sp"><span class="tag">Matchday</span><span class="format">X / IG</span></div>
@@ -439,6 +587,22 @@
             <h4>Player of the week</h4>
             <p>"Two goals, one assist, zero complaints when the ball wasn't coming his way. This week's spotlight was earned, not given."</p>
             <span class="post-hash">#PlayerOfTheWeek</span>
+          </div>
+        </div>
+        <div class="post-card">
+          <div class="thumb ch"><span class="tag">Puzzle</span><span class="format">IG</span></div>
+          <div class="post-content">
+            <h4>Puzzle of the day</h4>
+            <p>"White to move, mate in two. Drop your answer in the comments, first correct answer gets a shoutout in our Stories." A recurring engagement format that rewards participation, not just likes.</p>
+            <span class="post-hash">#ChessPuzzle #ThinkAheadPlayAhead</span>
+          </div>
+        </div>
+        <div class="post-card">
+          <div class="thumb ch"><span class="tag">Carousel</span><span class="format">IG</span></div>
+          <div class="post-content">
+            <h4>"Why pawns are the soul of the game"</h4>
+            <p>Opens a carousel breaking down a core opening principle in plain language for beginners, part of an education series designed to grow a club's audience past existing players.</p>
+            <span class="post-hash">#ChessTips #LearnChess</span>
           </div>
         </div>
       </div>
@@ -467,7 +631,7 @@
       <div>
         <span class="eyebrow">Contact</span>
         <h2>Have a page that needs a voice?</h2>
-        <p>Send a message with a bit about your brand or cause and what you need help with. I'll follow up within a couple of days.</p>
+        <p>Send a message with a bit about your brand or cause and what you need help with. I'll follow up immediately.</p>
       </div>
       <ul class="contact-list">
         <li><span>Email</span><a href="mailto:opeyemiogunbona06@gmail.com">opeyemiogunbona06@gmail.com</a></li>
